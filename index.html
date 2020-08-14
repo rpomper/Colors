@@ -50,9 +50,9 @@ var trial_order = prompt("Order (1-2)","1");
 
 // choose csv file
 if (trial_order == "1") {
-  var publicSpreadsheetUrl = 'https://raw.githubusercontent.com/rpomper/Colors/master/orders/Colors-Order-1.csv';
+  var publicSpreadsheetUrl = 'https://github.com/rpomper/Colors/blob/master/orders/Colors-Order-1.csv';
 } else if (trial_order == "2") {
-  var publicSpreadsheetUrl = 'https://raw.githubusercontent.com/rpomper/Colors/master/orders/Colors-Order-2.csv';
+  var publicSpreadsheetUrl = 'https://github.com/rpomper/Colors/blob/master/orders/Colors-Order-2.csv';
 }
 
 
@@ -139,7 +139,7 @@ function createTrials(data, tabletop) {
     trial_duration: 4702,
     response_ends_trial: false,
     // pause_key: ['a'], // new
-    margin_top: ['300px','300px'],
+    margin_top: ['0px','0px'],
     margin_bottom: ['0px','0px'],
     // margin_left: ['0px','89px'],
     // margin_right: ['89px','0px'],
@@ -188,7 +188,13 @@ imageExt+'strawberry.jpg',
 imageExt+'train.jpg',
 imageExt+'truck.jpg',
 imageExt+'white.jpg',
-imageExt+'yellow.jpg']
+imageExt+'yellow.jpg',
+imageExt+'black-background.jpg',
+imageExt+'white-background.jpg',
+imageExt+'fireworks-left.jpg',
+imageExt+'fireworks-right.jpg',
+imageExt+'ocean-left.jpg',
+imageExt+'ocean-right.jpg',]
 
 
 function startExperiment(data, tabletop) {
