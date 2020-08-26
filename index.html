@@ -109,52 +109,47 @@ function createTrials(data, tabletop) {
   var imageStart='<img src= "stimuli/images/'
   var imageStop= '.jpg"  title = "" width="300" height="250">'
 
-  lwl_stimuli = []
+  // lwl_stimuli = []
 
   for (var i = 0; i < expLength; i++) {
-    lwl_stimuli.push(
-    {stimulus: audioExt+data[i]['stimulus']+".wav",
-    choices:[imageStart+data[i]['left_image']+imageStop, imageStart+data[i]['right_image']+imageStop],
-    set_background:data[i]['background'],
-    data:{condition:data[i]['condition'],target_side:data[i]['target_side'],correct_response:data[i]['correct_response'],background:data[i]['background']},
-    iti_tr_num: "Trial"
-    })
-  }
+    // lwl_stimuli.push(
+    // {stimulus: audioExt+data[i]['stimulus']+".wav",
+    // choices:[imageStart+data[i]['left_image']+imageStop, imageStart+data[i]['right_image']+imageStop],
+    // set_background:data[i]['background'],
+    // data:{condition:data[i]['condition'],target_side:data[i]['target_side'],correct_response:data[i]['correct_response'],background:data[i]['background']},
+    // iti_tr_num: "Trial"
+    // })
 
-  console.log(lwl_stimuli);
-
-  var lwl_iti = {
-    type:'html-keyboard-response',
-    stimulus: jsPsych.timelineVariable('iti_tr_num'),
-    choices: jsPsych.NO_KEYS,
-    trial_duration: 300
-  }
-
-  var lwl_trial = {
-    type: 'audio-button-response-flexiblelocations',
-    // trial_duration: 4702,
-    // response_ends_trial: false,
-    response_ends_trial: true,
-    margin_top: ['0px','0px'],
-    margin_bottom: ['0px','0px'],
-    margin_left: ['0px','250px'],
-    margin_right: ['250px','0px'],
-    stimulus: jsPsych.timelineVariable('stimulus'),
-    choices: jsPsych.timelineVariable('choices'),
-    data: jsPsych.timelineVariable('data'),
-    on_finish: function(data) {
-      data.correct = data.button_pressed == data.correct_response;
+    var lwl_iti = {
+      type:'html-keyboard-response',
+      stimulus: "Trial: "+toString(i),
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 300
     }
+
+    timeline.push(lwl_iti)
+
+    var lwl_trial = {
+      type: 'audio-button-response-flexiblelocations',
+      // trial_duration: 4702,
+      // response_ends_trial: false,
+      response_ends_trial: true,
+      margin_top: ['0px','0px'],
+      margin_bottom: ['0px','0px'],
+      margin_left: ['0px','250px'],
+      margin_right: ['250px','0px'],
+      stimulus: audioExt+data[i]['stimulus']+".wav",
+      choices: [imageStart+data[i]['left_image']+imageStop, imageStart+data[i]['right_image']+imageStop],
+      set_background:data[i]['background'],
+      data:{condition:data[i]['condition'],target_side:data[i]['target_side'],correct_response:data[i]['correct_response'],background:data[i]['background']},
+      on_finish: function(data) {
+        data.correct = data.button_pressed == data.correct_response;
+      }
+    }
+
+    timeline.push(lwl_trial)
+
   }
-
-  var exp_procedure = {
-    timeline: [lwl_iti,lwl_trial],
-    timeline_variables: lwl_stimuli
-  }
-
-  console.log(exp_procedure);
-
-  timeline.push(exp_procedure);
 
   // var lwl_trials = {
   //   type: 'audio-button-response-flexiblelocations',
