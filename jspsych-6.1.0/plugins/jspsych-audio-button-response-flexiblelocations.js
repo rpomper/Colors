@@ -77,7 +77,7 @@ jsPsych.plugins["audio-button-response-flexiblelocations"] = (function() {
       set_background: {
         type: jsPsych.plugins.parameterType.STRING,
         pretty_name: 'Assign background image',
-        default: '/stimuli/images/face-closed.jpg',
+        default: 'black-background',
         description: 'The path and file name for images to be displayed as background'
       },
       response_ends_trial: {
