@@ -105,17 +105,6 @@ function createTrials(data, tabletop) {
 
   timeline.push(welcome);
 
-  // var instructions = {
-  //   type: 'audio-button-response-flexiblelocations',
-  //   stimulus: 'stimuli/sounds/Intro.wav',
-  //   margin_top: ['400px'],
-  //   margin_bottom: ['0px'],
-  //   set_background: 'face-closed',
-  //   choices: ['Go']
-  // }
-  //
-  // timeline.push(instructions);
-
   var expLength = data.length;
   var audioExt="stimuli/sounds/"
   var imageStart='<img src= "stimuli/images/'
@@ -164,11 +153,9 @@ function createTrials(data, tabletop) {
     timeline_variables: lwl_stimuli
   }
 
+  console.log(exp_procedure);
+
   timeline.push(exp_procedure);
-
-  //
-  // timeline.push(lwl_trials);
-
 
   // var lwl_trials = {
   //   type: 'audio-button-response-flexiblelocations',
