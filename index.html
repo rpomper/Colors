@@ -152,9 +152,9 @@ function createTrials(data, tabletop) {
     stimulus: jsPsych.timelineVariable('stimulus'),
     choices: jsPsych.timelineVariable('choices'),
     data: jsPsych.timelineVariable('data'),
-    on_finish: function(data) {
-      data.correct = data.button_pressed == data.correct_response;
-    }
+    // on_finish: function(data) {
+    //   data.correct = data.button_pressed == data.correct_response;
+    // }
   }
 
   var exp_procedure = {
