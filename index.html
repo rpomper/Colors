@@ -120,11 +120,13 @@ function createTrials(data, tabletop) {
     // iti_tr_num: "Trial"
     // })
 
+    console.log("Trial:"+toString(i))
+
     var lwl_iti = {
       type:'html-keyboard-response',
       stimulus: "Trial: "+toString(i),
       choices: jsPsych.NO_KEYS,
-      trial_duration: 300
+      trial_duration: 1000
     }
 
     timeline.push(lwl_iti)
