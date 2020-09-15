@@ -101,7 +101,7 @@ function createTrials(data, tabletop) {
   var welcome = {
     type: "fullscreen",
     // fullscreen_mode: false,
-    message: "<p>Subject: "+subject_id.toString()+"</p><p>Order: "+trial_order.toString()+"</p><br>",
+    message: "<br><br><br><p>Subject: "+subject_id.toString()+"</p><p>Order: "+trial_order.toString()+"</p><br>",
     button_label: "Start",
     delay_after: 250
   }
@@ -112,7 +112,7 @@ function createTrials(data, tabletop) {
     type: "audio-keyboard-response",
     stimulus:"stimuli/sounds/audio_check.wav",
     choices:['space'],
-    prompt: "<p> Please turn the volume up or down, so that the volume resembles a person's voice in the room. <br> Please tell the experimenter when you think the level is comfortable for your child.</br> </p>"
+    prompt: "<br><br><br><br><p> Please turn the volume up or down, so that the volume resembles a person's voice in the room. <br> Please tell the experimenter when you think the level is comfortable for your child.</br> </p>"
   }
 
   timeline.push(audio_test);
