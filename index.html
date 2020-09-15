@@ -38,8 +38,9 @@
 
 
 //Enter subject id
-var subject_id = prompt("Enter subject id", "test");
+//var subject_id = prompt("Enter subject id", "test");
 //var trial_order = prompt("Order (1-2)","1");
+var subject_id = jsPsych.data.getURLVariable('sub')
 var trial_order = jsPsych.data.getURLVariable('order')
 
 // var input = prompt("Enter input type (touch or click)","touch");
@@ -99,7 +100,7 @@ function createTrials(data, tabletop) {
   var welcome = {
     type: "fullscreen",
     // fullscreen_mode: false,
-    message: "Subject"+subject_id.toString(),
+    message: "<p>Subject: "+subject_id.toString()+"</p><br><p>Order: "+trial_order.toString()+"</p>",
     button_label: "Start",
     delay_after: 250
   }
