@@ -107,6 +107,15 @@ function createTrials(data, tabletop) {
 
   timeline.push(welcome);
 
+  var audio_test = {
+    type: "audio-keyboard-response",
+    stimulus:"stimuli/sounds/audio_check.wav",
+    choices:['space'],
+    prompt: "<p> Please turn the volume up or down, so that the volume resembles a person's voice in the room. <br> Please tell the experimenter when you think the level is comfortable for your child.</br> </p>"
+  }
+
+  timeline.push(audio_test);
+
   var expLength = data.length;
   var audioExt="stimuli/sounds/"
   var imageStart='<img src= "stimuli/images/'
