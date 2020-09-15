@@ -102,7 +102,7 @@ function createTrials(data, tabletop) {
     type: "fullscreen",
     // fullscreen_mode: false,
     message: "<br><br><br><p>Subject: "+subject_id.toString()+"</p><p>Order: "+trial_order.toString()+"</p><br>",
-    button_label: "Start",
+    button_label: "Show Instructions",
     delay_after: 250
   }
 
@@ -116,6 +116,16 @@ function createTrials(data, tabletop) {
   }
 
   timeline.push(audio_test);
+
+  var wait_to_start = {
+    type: "fullscreen",
+    // fullscreen_mode: false,
+    message: "",
+    button_label: "Start",
+    delay_after: 250
+  }
+
+  timeline.push(welcome);
 
   var expLength = data.length;
   var audioExt="stimuli/sounds/"
