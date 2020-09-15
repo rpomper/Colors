@@ -112,7 +112,7 @@ function createTrials(data, tabletop) {
     type: "audio-keyboard-response",
     stimulus:"stimuli/sounds/audio_check.wav",
     choices:['space'],
-    prompt: "<br><br><br><br><br><br><br><br><p style='font-size:30px;'> Please turn the volume up or down, so that the volume resembles a person's voice in the room. <br> Please tell the experimenter when you think the level is comfortable for your child.</br> </p>"
+    prompt: "<br><br><br><br><br><br><br><br><p style='font-size:30px;'> Please adjust the volume on your computer <br> so that your child can comfortably hear the sounds being played. <br> Sounds should be as loud as a person's voice in the room. <br><br><br> Please tell the experimenter when you are ready.</br> </p>"
   }
 
   timeline.push(audio_test);
@@ -120,12 +120,12 @@ function createTrials(data, tabletop) {
   var wait_to_start = {
     type: "fullscreen",
     // fullscreen_mode: false,
-    message: "",
+    message: "When are you ready to start...",
     button_label: "Click Here",
     delay_after: 250
   }
 
-  timeline.push(welcome);
+  timeline.push(wait_to_start);
 
   var expLength = data.length;
   var audioExt="stimuli/sounds/"
