@@ -145,9 +145,9 @@ function createTrials(data, tabletop) {
 
     var lwl_iti = {
       type:'html-keyboard-response',
-      stimulus: "Trial: "+i.toString(),
+      stimulus: "<p style='font-size:60px;'>Trial: </p>"+i.toString(),
       choices: jsPsych.NO_KEYS,
-      trial_duration: 50
+      trial_duration: 500
     }
 
     timeline.push(lwl_iti)
