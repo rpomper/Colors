@@ -12,6 +12,8 @@ Cookie_Find,cheerios,cookie,Fam-Food,R,1,black-background
 Banana_Where,apple,banana,Fam-Food,R,1,black-background
 Peas_Look,peas,orangeF,Fam-Food,L,0,black-background
 Car_Where,tractor,car,Fam-Veh,R,1,black-background
+Blocks_Find,doll,blocks,Filler,R,1,black-background
+Doll_Where,doll,blocks,Filler,L,0,black-background
 Boat_Where,yellow,red,Test-Food,L,0,black-background
 Carrots_Look,orange,white,Test-Veh,L,0,black-background
 Peas_Find,green,brown,Test-Veh,L,0,black-background
